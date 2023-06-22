@@ -1,0 +1,30 @@
+name: Test Scheduler
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test_scheduler:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y bash
+
+    - name: Make scripts executable
+      run: |
+        chmod +x simulator.sh
+        chmod +x generate_input.sh
+
+    - name: Generate input file
+      run: ./generate_input.sh -n 50
+
+    - name: Run test script
+      run: ./test_scheduler.sh -file input_file.csv
