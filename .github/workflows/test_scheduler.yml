@@ -27,4 +27,4 @@ jobs:
       run: ./generate_input.sh -n 50
 
     - name: Run test script
-      run: ./test_scheduler.sh -file input_file.csv
+      run: ./simulator.sh -file input_file.csv
