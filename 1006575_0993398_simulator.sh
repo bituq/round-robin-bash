@@ -1,4 +1,5 @@
 #!/bin/bash
+# Dylan Noorland (1006575) & Tijmen Rietveld (0993398)
 
 if [ "$#" -ne 2 ] || [ "$1" != "-file" ]; then
     echo "Usage: $0 -file <file>"
